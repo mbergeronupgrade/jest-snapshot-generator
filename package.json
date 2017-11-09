@@ -4,7 +4,7 @@
   "description": "Automatically generate snapshot files for your project React / React-native projects",
   "main": "findFolders.js",
   "scripts": {
-    "build": "babel findFolders.js -o compiled.js",
+    "build": "babel index.js -o compiled.js",
     "test": "mocha",
     "test:watch": "mocha --watch"
   },
@@ -14,6 +14,8 @@
   "author": "“Truls <“trulsske@gmail.com”>",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "chai": "^3.5.0",
     "chai-as-promised": "^6.0.0",
     "del": "^2.2.2",
@@ -30,7 +32,7 @@
     "url": "git+https://github.com/skeie/jest-snapshot-starter.git"
   },
   "bin": {
-    "jest-snapshot-generate" : "./index.js"
+    "jest-snapshot-generate": "./index.js"
   },
   "keywords": [
     "jest",

@@ -3,16 +3,14 @@ function createJestTest(filename) {
     const readableFilename = capitalizeFirstLetter(fileWithOutExt);
     return (
 `import React from 'react';
-import renderer from 'react-test-renderer';
-import ${readableFilename} from '../${readableFilename}';
-test('Should render ${readableFilename} correctly', () => {
-    const tree = renderer.create(
-        <${readableFilename} /> 
-    ).toJSON();
-    expect(tree).toMatchSnapshot();
+import matchesSnapshot from 'upgrade-ui-utils/utils/assertions/matches-snapshot';
+
+import ${readableFilename} from '../${fileWithOutExt}';
+
+it('Should render ${readableFilename} correctly', () => {
+  matchesSnapshot(<${readableFilename} />);
 });
-    `
-    );
+`);
 
 }
 

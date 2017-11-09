@@ -8,7 +8,7 @@ const generateFile = (filePath, filename, startPath) => {
             .then(({isReactFile, filePath}) => {
                 if (isReactFile) {
                     const testPath = `${startPath}/__tests__`;
-                    const testFileName = `${filename.replace(/\.[^/.]+$/, "")}-test.js`
+                    const testFileName = `${filename.replace(/\.[^/.]+$/, "")}.test.js`
                     const fileContent = createJestFile.createJestTest(filename);
 
                     resolve(
@@ -63,7 +63,7 @@ function findTestFolder(path) {
 
 
 function checkIfReactFile(filePath) {
-    if (filePath.indexOf('-test.js') > 0) { // Don't generate files for test files
+    if (filePath.indexOf('.test.js') > 0) { // Don't generate files for test files
         return Promise.resolve(false);
     }
 

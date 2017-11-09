@@ -26,7 +26,7 @@ describe('Test that it only generates snapshots for react files', function () {
     });
 
     it('should contain a snapshot test file', () => {
-        chai.expect(fs.existsSync(`${__dirname}/${TEST_PATH}/${REACT_COMP}-test.js`)).to.be.true;
+        chai.expect(fs.existsSync(`${__dirname}/${TEST_PATH}/${REACT_COMP}.test.js`)).to.be.true;
     })
 
 });
